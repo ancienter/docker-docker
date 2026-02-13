@@ -19,9 +19,9 @@ func (cli *Client) ImageTag(ctx context.Context, source, target string) error {
 		return errors.Wrapf(err, "Error parsing reference: %q is not a valid repository/tag", target)
 	}
 
-	if _, isCanonical := ref.(reference.Canonical); isCanonical {
-		return errors.New("refusing to create a tag with a digest reference")
-	}
+	//if _, isCanonical := ref.(reference.Canonical); isCanonical {
+	//	return errors.New("refusing to create a tag with a digest reference")
+	//}
 
 	ref = reference.TagNameOnly(ref)
 

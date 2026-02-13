@@ -3,7 +3,7 @@ package client
 import (
 	"context"
 	"encoding/json"
-	"errors"
+	// "errors"
 	"fmt"
 	"io"
 	"net/http"
@@ -25,9 +25,9 @@ func (cli *Client) ImagePush(ctx context.Context, image string, options image.Pu
 		return nil, err
 	}
 
-	if _, isCanonical := ref.(reference.Canonical); isCanonical {
-		return nil, errors.New("cannot push a digest reference")
-	}
+	//if _, isCanonical := ref.(reference.Canonical); isCanonical {
+	//	return nil, errors.New("cannot push a digest reference")
+	//}
 
 	query := url.Values{}
 	if !options.All {
